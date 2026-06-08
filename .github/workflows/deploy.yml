@@ -3,7 +3,8 @@ name: Deploy para HostGator
 on:
   push:
     branches:
-      - main # Executa a ação toda vez que houver um push na branch 'main' (ou altere para 'master' se for o caso)
+      - main # Executa a ação toda vez que houver um push na branch 'main'
+  workflow_dispatch: # Permite rodar o deploy manualmente clicando em um botão no GitHub!
 
 jobs:
   build-and-deploy:
