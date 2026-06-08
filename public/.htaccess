@@ -1,3 +1,6 @@
+# Priorizar o index.html da nossa aplicação sobre qualquer arquivo padrão da HostGator (como default.html, index.php ou home.html)
+DirectoryIndex index.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -6,3 +9,4 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
+
