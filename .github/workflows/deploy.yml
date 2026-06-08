@@ -29,10 +29,23 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      # 4.5. Tratar dinamicamente o diretório do FTP (evitando erros de falta de barra '/' ou campo vazio)
-      - name: Format FTP Directory Path
+      # 4.5. Tratar dinamicamente as credenciais do FTP (evitando erros comuns de digitação ou protocolos colocados por engano)
+      - name: Format and Sanitize FTP Configuration
         run: |
+          # Higienizar o Servidor (remover ftp://, ftps:// e barras finais para evitar ENOTFOUND)
+          SERVER="${{ secrets.FTP_SERVER }}"
+          SERVER="${SERVER#ftp://}"
+          SERVER="${SERVER#ftps://}"
+          SERVER="${SERVER#http://}"
+          SERVER="${SERVER#https://}"
+          SERVER="${SERVER%/}"
+          # Remover espaços em branco acidentais
+          SERVER=$(echo "$SERVER" | xargs)
+          echo "FTP_SERVER_CLEANED=$SERVER" >> $GITHUB_ENV
+
+          # Higienizar o Diretório (garantir barra no final)
           DIR="${{ secrets.FTP_DIR }}"
+          DIR=$(echo "$DIR" | xargs)
           if [ -z "$DIR" ]; then
             DIR="public_html/"
           elif [[ "$DIR" != */ ]]; then
@@ -44,7 +57,7 @@ jobs:
       - name: Deploy via FTP to HostGator
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ env.FTP_SERVER_CLEANED }}   # Usando o servidor higienizado sem protocolos
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/                    # Envia apenas o conteúdo compilado pela Vite
