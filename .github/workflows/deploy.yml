@@ -15,16 +15,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. Configurar o ambiente com Node.js
+      # 2. Configurar o ambiente com Node.js (versão 20 estável)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: 'npm'
+          node-version: 20
 
-      # 3. Instalar as dependências do projeto
+      # 3. Instalar as dependências do projeto (npm install comum evita estresse de cache/lock)
       - name: Install Dependencies
-        run: npm ci || npm install
+        run: npm install
 
       # 4. Compilar o site (Vite gera a pasta /dist com os arquivos estáticos)
       - name: Build Project
@@ -32,11 +31,11 @@ jobs:
 
       # 5. Fazer o deploy para a HostGator via FTP
       - name: Deploy via FTP to HostGator
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/                    # Envia apenas o conteúdo compilado pela Vite
-          server-dir: ${{ secrets.FTP_DIR }}    # Pasta de destino na HostGator (geralmente public_html/ ou subpasta)
+          server-dir: ${{ secrets.FTP_DIR }}    # Pasta de destino na HostGator (Ex: public_html/ ou subpasta)
           dangerous-clean-slate: false          # Se true, remove todos os outros arquivos da pasta remota (mantenha false por segurança)
