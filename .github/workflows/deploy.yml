@@ -29,6 +29,17 @@ jobs:
       - name: Build Project
         run: npm run build
 
+      # 4.5. Tratar dinamicamente o diretório do FTP (evitando erros de falta de barra '/' ou campo vazio)
+      - name: Format FTP Directory Path
+        run: |
+          DIR="${{ secrets.FTP_DIR }}"
+          if [ -z "$DIR" ]; then
+            DIR="public_html/"
+          elif [[ "$DIR" != */ ]]; then
+            DIR="$DIR/"
+          fi
+          echo "FTP_DIR_FORMATTED=$DIR" >> $GITHUB_ENV
+
       # 5. Fazer o deploy para a HostGator via FTP
       - name: Deploy via FTP to HostGator
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -37,5 +48,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/                    # Envia apenas o conteúdo compilado pela Vite
-          server-dir: ${{ secrets.FTP_DIR }}    # Pasta de destino na HostGator (Ex: public_html/ ou subpasta)
+          server-dir: ${{ env.FTP_DIR_FORMATTED }} # Pasta tratada dinamicamente com "/" garantido no final
           dangerous-clean-slate: false          # Se true, remove todos os outros arquivos da pasta remota (mantenha false por segurança)
