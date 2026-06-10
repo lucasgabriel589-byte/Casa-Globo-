@@ -53,10 +53,14 @@ async function startDeploy() {
     });
 
     console.log("\x1b[32m✅ Conectado com sucesso ao servidor FTP!\x1b[0m");
+    const initialDir = await client.pwd();
+    console.log(`  🔹 Pasta inicial de login no FTP: \x1b[34m${initialDir}\x1b[0m`);
 
     // Garantir que a pasta remota existe e navegar até ela
     console.log(`📂 Verificando/Criando a pasta remota de destino...`);
     await client.ensureDir(remoteDir);
+    const finalDir = await client.pwd();
+    console.log(`  🔹 Pasta final de destino ativa no FTP: \x1b[34m${finalDir}\x1b[0m`);
 
     // Fazer o upload de todos os arquivos da pasta 'dist' local para o diretório remoto
     console.log("📤 Enviando todos os arquivos compilados da pasta \x1b[32m./dist\x1b[0m...");
