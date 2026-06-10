@@ -47,7 +47,7 @@ jobs:
           DIR="${{ secrets.FTP_DIR }}"
           DIR=$(echo "$DIR" | xargs)
           if [ -z "$DIR" ]; then
-            DIR="public_html/"
+            DIR="./"
           elif [[ "$DIR" != */ ]]; then
             DIR="$DIR/"
           fi
@@ -60,6 +60,7 @@ jobs:
           server: ${{ env.FTP_SERVER_CLEANED }}   # Usando o servidor higienizado sem protocolos
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp                            # OBRIGATÓRIO NA HOSTGATOR: Evita o erro 421 de SSL/TLS com contas FTP secundárias
           local-dir: ./dist/                    # Envia apenas o conteúdo compilado pela Vite
           server-dir: ${{ env.FTP_DIR_FORMATTED }} # Pasta tratada dinamicamente com "/" garantido no final
           dangerous-clean-slate: false          # Se true, remove todos os outros arquivos da pasta remota (mantenha false por segurança)
