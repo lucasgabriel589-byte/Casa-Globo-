@@ -138,7 +138,7 @@ export default function Locations({ selectedBranchId, onSelectBranch }: Location
                   {copiedTextId === currentBranch.id ? 'Copiado!' : 'Copiar Endereço'}
                 </button>
                 <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(currentBranch.name + ' ' + currentBranch.address)}`}
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(currentBranch.name + ' ' + currentBranch.address)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-amber-500 text-blue-950 rounded-lg text-xs font-bold hover:bg-amber-400 transition-colors inline-flex items-center gap-1 cursor-pointer shadow-xs"
