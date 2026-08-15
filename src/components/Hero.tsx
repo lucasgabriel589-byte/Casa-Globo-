@@ -17,9 +17,24 @@ export default function Hero({ onScrollToCatalog, onScrollToHistory }: HeroProps
   return (
     <section 
       id="hero-section"
-      className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-radial from-blue-900 via-blue-950 to-slate-950"
+      className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-slate-950"
     >
-      {/* Decorative Wave and Grid BG Overlays */}
+      {/* Imagem aérea de Angra: conecta a marca ao território onde ela atua. */}
+      <div
+        className="absolute inset-0 bg-[url('/images/hero-angra-aerea.jpg')] bg-cover bg-center lg:bg-[position:center_56%]"
+        aria-hidden="true"
+      />
+
+      {/* Gradiente escuro: cria espaço negativo para o texto no lado esquerdo. */}
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-slate-950 via-blue-950/80 to-blue-950/35"
+        aria-hidden="true"
+      />
+
+      {/* Camada azul translúcida: integra a fotografia à identidade da Casa Globo. */}
+      <div className="absolute inset-0 bg-blue-950/25" aria-hidden="true" />
+
+      {/* Grade discreta sobre a fotografia para manter o aspecto náutico/tecnológico. */}
       <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px]" />
       
       {/* Porthole/Navy geometry decorative outlines from theme */}
