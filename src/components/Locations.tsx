@@ -1,3 +1,10 @@
+/**
+ * Seção de localização das lojas.
+ *
+ * Permite selecionar uma filial, consultar endereço, horário de atendimento,
+ * mapa e canais de contato correspondentes.
+ */
+
 import { useState } from 'react';
 import { Branch } from '../types';
 import { STORE_BRANCHES } from '../data';

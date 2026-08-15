@@ -1,3 +1,10 @@
+/**
+ * Componente raiz da aplicação Casa Globo.
+ *
+ * Esta tela organiza a página institucional inteira, mantém a filial ativa,
+ * conecta as seções por rolagem suave e direciona os contatos para o WhatsApp.
+ */
+
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -9,7 +16,7 @@ import { STORE_BRANCHES } from './data';
 import { MessageSquare, ExternalLink } from 'lucide-react';
 
 export default function App() {
-  const [selectedBranchId, setSelectedBranchId] = useState('nova_angra'); // Default branch
+  const [selectedBranchId, setSelectedBranchId] = useState('nova_angra'); // Define Nova Angra como filial inicial do atendimento.
 
   const handleScrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

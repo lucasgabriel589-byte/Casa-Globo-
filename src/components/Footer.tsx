@@ -1,3 +1,10 @@
+/**
+ * Rodapé institucional.
+ *
+ * Reúne a logo, o slogan, os links rápidos, os endereços das lojas e os
+ * canais sociais da Casa Globo.
+ */
+
 import { Anchor, Instagram, Phone, Compass, ShieldAlert, Navigation } from 'lucide-react';
 
 interface FooterProps {
@@ -21,11 +28,12 @@ export default function Footer({ onScrollToSection }: FooterProps) {
               onClick={() => onScrollToSection('hero-section')}
               className="flex items-center gap-3 text-left cursor-pointer hover:opacity-90 transition-opacity"
             >
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-900 font-extrabold text-lg shadow-md shrink-0">
-                CG
-              </div>
               <div>
-                <h3 className="font-extrabold text-white text-base uppercase tracking-wider leading-none">Casa Globo</h3>
+                <img
+                  src="/brand/casa-globo-logo.webp"
+                  alt="Casa Globo Náutica"
+                  className="h-28 w-72 object-contain object-left"
+                />
                 <span className="text-[10px] text-amber-400 font-bold tracking-wide">Um mundo de soluções para você.</span>
               </div>
             </button>

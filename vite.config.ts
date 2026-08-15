@@ -13,10 +13,12 @@ export default defineConfig(() => {
       },
     },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
+      // Permite o domínio temporário usado para visualizar o site no navegador.
+      allowedHosts: true as const,
+      // O HMR pode ser desativado pelo ambiente por meio da variável DISABLE_HMR.
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
-      // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
+      // Desativa o monitoramento de arquivos quando o HMR está desligado para economizar CPU.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   };

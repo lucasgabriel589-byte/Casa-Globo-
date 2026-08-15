@@ -1,3 +1,10 @@
+/**
+ * Seção principal de apresentação.
+ *
+ * É a primeira área visual da página e comunica o posicionamento da Casa
+ * Globo, suas categorias principais e os botões de chamada para ação.
+ */
+
 import { motion } from 'motion/react';
 import { Anchor, ArrowDown, Shield, Award, MapPin, Compass } from 'lucide-react';
 

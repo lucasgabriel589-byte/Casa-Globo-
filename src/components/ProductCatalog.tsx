@@ -1,3 +1,10 @@
+/**
+ * Catálogo de produtos.
+ *
+ * Responsável pela busca, filtragem por categoria, apresentação dos cards e
+ * criação das mensagens personalizadas enviadas ao WhatsApp.
+ */
+
 import React, { useState } from 'react';
 import { Product } from '../types';
 import { PRODUCT_CATALOG } from '../data';

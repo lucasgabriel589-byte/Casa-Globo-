@@ -1,5 +1,12 @@
+/**
+ * Barra de navegação fixa.
+ *
+ * Exibe a logo oficial, os links de navegação, o status das lojas e o botão
+ * de contato direto pelo WhatsApp da filial selecionada.
+ */
+
 import { useState, useEffect } from 'react';
-import { MessageSquare, Anchor } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 
 interface NavbarProps {
   onScrollToSection: (sectionId: string) => void;
@@ -46,18 +53,12 @@ export default function Navbar({ onScrollToSection, activeBranchWhatsapp }: Navb
             onClick={() => onScrollToSection('hero-section')}
             className="flex items-center gap-3 transition-transform hover:scale-[1.01] cursor-pointer text-left"
           >
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-900 font-extrabold text-lg shadow-md shrink-0">
-              CG
-            </div>
-            <div>
-              <div className="flex items-center gap-1.5 leading-none">
-                <span className="font-extrabold text-lg tracking-wider md:text-xl uppercase text-white">Casa Globo</span>
-                <span className="text-[10px] bg-amber-500 font-extrabold px-1.5 py-0.5 rounded text-blue-950 tracking-normal text-center min-w-[55px] inline-block">50 ANOS</span>
-              </div>
-              <p className="text-[10px] font-bold tracking-wide mt-0.5 text-blue-100">
-                Angra dos Reis • Náutica & Pesca
-              </p>
-            </div>
+            <img
+              src="/brand/casa-globo-logo.webp"
+              alt="Casa Globo Náutica"
+              className="h-16 w-44 md:h-20 md:w-56 object-contain object-left shrink-0"
+            />
+            <span className="text-[10px] bg-amber-500 font-extrabold px-1.5 py-0.5 rounded text-blue-950 tracking-normal text-center min-w-[55px] inline-block">50 ANOS</span>
           </button>
 
           {/* Desktop Navigation Links */}

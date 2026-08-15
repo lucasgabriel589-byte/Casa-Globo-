@@ -1,3 +1,11 @@
+/**
+ * Dados institucionais e comerciais da Casa Globo.
+ *
+ * Este arquivo concentra a linha do tempo da empresa, as filiais e o catálogo
+ * de produtos. Alterações de conteúdo normalmente devem ser feitas aqui,
+ * sem misturar dados de negócio com a estrutura visual dos componentes.
+ */
+
 import { Product, Branch, HistoryMilestone } from './types';
 
 export const STORE_HISTORY: HistoryMilestone[] = [
@@ -54,7 +62,7 @@ export const STORE_BRANCHES: Branch[] = [
 ];
 
 export const PRODUCT_CATALOG: Product[] = [
-  // --- PESCA ---
+  // --- Categoria: pesca ---
   {
     id: 'p1',
     name: 'Molinete de Alta Performance Marítima',
@@ -62,7 +70,7 @@ export const PRODUCT_CATALOG: Product[] = [
     description: 'Molinete japonês com rolamentos blindados em aço inox, anti-reverso instantâneo e alta força de fricção (drag), ideal para pesca embarcada em Angra.',
     featured: true,
     badge: 'Mais Vendido',
-    image: 'https://images.unsplash.com/photo-1611095787951-36a53c5f31e7?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-p1-molinete.jpg'
   },
   {
     id: 'p2',
@@ -70,7 +78,7 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'pesca',
     description: 'Vara super leve de carbono maciço de ação rápida. Excelente sensibilidade para iscas artificiais e pesca de arremesso.',
     featured: true,
-    image: 'https://images.unsplash.com/photo-1517462964-21fdcec3f25b?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-p2-vara-pesca.jpg'
   },
   {
     id: 'p3',
@@ -78,7 +86,7 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'pesca',
     description: 'Iscas de meia-água e fundo em cores ultra atrativas para captura de Robalos, Garoupas e Sororocas.',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-p3-iscas.jpg'
   },
   {
     id: 'p4',
@@ -86,10 +94,10 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'pesca',
     description: 'Livre de memória com elasticidade zero. Diâmetro super reduzido para arremessos longos e incrível resistência à abrasão marítima.',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-p4-linha.jpg'
   },
 
-  // --- NÁUTICA ---
+  // --- Categoria: náutica ---
   {
     id: 'n1',
     name: 'Defensas Marítimas Reforçadas',
@@ -97,7 +105,7 @@ export const PRODUCT_CATALOG: Product[] = [
     description: 'Defensas em PVC flexível de alta durabilidade com proteção UV e olhais duplos para máxima segurança ao atracar na marina.',
     featured: true,
     badge: 'Essencial',
-    image: 'https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-n1-defensas.jpg'
   },
   {
     id: 'n2',
@@ -106,7 +114,7 @@ export const PRODUCT_CATALOG: Product[] = [
     description: 'Boia inflável para esportes aquáticos, revestida em nylon de alta resistência com alças acolchoadas. Diversão garantida em Angra.',
     featured: true,
     badge: 'Esportes',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-n2-boia-arrasto.jpg'
   },
   {
     id: 'n3',
@@ -114,7 +122,7 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'nautica',
     description: 'Colete homologado pela Marinha do Brasil. Confeccionado em nylon ripstop e preenchido com espuma resistente a impactos.',
     featured: true,
-    image: 'https://images.unsplash.com/photo-1471958680802-1345a694ba6d?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-n3-colete.jpg'
   },
   {
     id: 'n4',
@@ -122,7 +130,7 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'nautica',
     description: 'Excepcional poder de garra e estabilidade em fundos de areia e lodo. Fabricada em aço fundido com acabamento galvanizado reforçado.',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-n4-ancora.jpg'
   },
   {
     id: 'n5',
@@ -130,10 +138,10 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'nautica',
     description: 'Acessórios inoxidáveis de alta resistência à corrosão, indispensáveis para sistemas de ancoragem segura.',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1524522173746-f628baad3644?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-n5-manilhas.jpg'
   },
 
-  // --- PISCINA ---
+  // --- Categoria: piscina ---
   {
     id: 'm1',
     name: 'Cloro Estabilizado Hidroall 10 em 1',
@@ -141,7 +149,7 @@ export const PRODUCT_CATALOG: Product[] = [
     description: 'Cloro multiativo de dissolução lenta que purifica, clarifica, desinfeta, previne algas e preserva a cristalinidade da água.',
     featured: true,
     badge: 'Destaque',
-    image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-m1-cloro.jpg'
   },
   {
     id: 'm2',
@@ -149,7 +157,7 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'piscina',
     description: 'Aspirador asa delta com cerdas de nylon e mangueira flexível flutuante para limpeza ágil do fundo de piscinas residenciais.',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-m2-kit-limpeza.jpg'
   },
   {
     id: 'm3',
@@ -157,7 +165,7 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'piscina',
     description: 'Evita a proliferação de algas (água verde) e restaura o brilho esmeralda de piscinas sem manchar o revestimento.',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-m3-algicida.jpg'
   },
   {
     id: 'm4',
@@ -165,10 +173,10 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'piscina',
     description: 'Kit de análise rápida para aferir os níveis de pH e cloro, garantindo uma água saudável para toda a família.',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-m4-teste-ph.jpg'
   },
 
-  // --- LAZER ---
+  // --- Categoria: lazer ---
   {
     id: 'l1',
     name: 'Caiaque de Pesca Rotomoldado com Pedal',
@@ -176,7 +184,7 @@ export const PRODUCT_CATALOG: Product[] = [
     description: 'Caiaque individual extremamente estável com suporte de varas integrado, leme direcional e compartimentos estanques para carregar equipamentos.',
     featured: true,
     badge: 'Novidade',
-    image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-l1-caiaque.jpg'
   },
   {
     id: 'l2',
@@ -184,7 +192,7 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'lazer',
     description: 'Mantém o gelo por dias em condições quentes de praia ou barco. Alça confortável e dreno integrado de fácil limpeza.',
     featured: true,
-    image: 'https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-l2-caixa-termica.jpg'
   },
   {
     id: 'l3',
@@ -192,17 +200,17 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'lazer',
     description: 'Flutuadores coloridos e boias de arrasto esportivo para todos os momentos de recreação sob o sol de Angra.',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-l3-boias.jpg'
   },
 
-  // --- FERRAMENTAS ---
+  // --- Categoria: ferramentas ---
   {
     id: 'f1',
     name: 'Alicate Multifunção de Pesca em Alumínio Marino',
     category: 'ferramentas',
     description: 'Resistente à corrosão, para troca de argolas de isca (split ring), corte de linhas de multifilamento e cabo de aço.',
     featured: true,
-    image: 'https://images.unsplash.com/photo-1534224039826-c7a0dea0e66a?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-f1-alicate-pesca.jpg'
   },
   {
     id: 'f2',
@@ -210,6 +218,6 @@ export const PRODUCT_CATALOG: Product[] = [
     category: 'ferramentas',
     description: 'Alta potência de iluminação com carcaça de alumínio aeronáutico e vedação contra infiltrações em passeios noturnos ou acampamento.',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=500&auto=format&fit=crop&q=80'
+    image: '/images/product-f2-lanterna.jpg'
   }
 ];

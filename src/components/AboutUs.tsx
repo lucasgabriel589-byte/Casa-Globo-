@@ -1,3 +1,10 @@
+/**
+ * Seção "Nossa História".
+ *
+ * Apresenta a trajetória da Casa Globo, seus valores e a cronologia dos
+ * principais momentos da empresa desde 1974.
+ */
+
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { STORE_HISTORY } from '../data';

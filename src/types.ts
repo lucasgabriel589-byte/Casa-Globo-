@@ -1,3 +1,10 @@
+/**
+ * Tipos compartilhados da aplicação.
+ *
+ * As interfaces abaixo descrevem o formato das filiais, produtos e marcos
+ * históricos usados pelos componentes da página.
+ */
+
 export interface Product {
   id: string;
   name: string;
